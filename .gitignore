@@ -1,0 +1,11 @@
+Lib
+Scripts
+.idea
+.pytest_cache
+venv
+__pycache__/
+tests/.pytest_cache
+
+
+.env
+*.log
