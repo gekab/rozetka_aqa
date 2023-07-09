@@ -41,7 +41,7 @@ def browser(request):
     driver.get(url)
     yield driver
     print("\nEnd work browser")
-    driver.quit()
+    driver.close()
 
 
 @pytest.fixture(scope="function")
@@ -61,4 +61,4 @@ def browser_chrome(request):
     driver.get(url)
     yield driver
     print("\nEnd work browser")
-    driver.quit()
+    driver.close()

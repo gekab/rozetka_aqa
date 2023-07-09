@@ -2,11 +2,8 @@ import json
 from string import ascii_lowercase, digits
 
 import random
-from random import random as randrandom
 
 import time
-from datetime import date
-from datetime import datetime, timedelta
 
 import os
 from dotenv import load_dotenv
@@ -127,46 +124,5 @@ if __name__ == '__main__':
     }
 
     # json_to_file(d)
-    file_in = "../received_data/companies.json"
-    json_data = read_from_json(file_in)
-    # print(["evgeny-bondar@ukr.net"][0] in json_data["Test"]["emails"])
-
-    # print("GR8 Tech" in json_data)
     print(f"{50 * '='}")
 
-    # print(json_data)
-    # print(type(json_data))
-    # print(len(json_data))
-
-
-    # for (key, value) in j_data.items():
-    #     post_data_str = value["post_data"]
-    #     post_data = datetime.strptime(post_data_str, "%Y-%m-%d %H:%M:%S.%f")
-    #
-    #     today = datetime.today()
-    #
-    #     if (int((today - post_data).days)) > 35:
-    #         print(key, *value["emails"], value["post_data"])
-    #         list_email = value["emails"]
-    #
-    #         value["post_data"] = str(datetime.today())
-    #         print(type(value["post_data"]))
-    #         print("After Update:")
-    #         print(key, value["post_data"])
-
-    # print(calc_symbol_in_strint(s, "letter"))
-    # print(calc_symbol_in_strint(s, "number"))
-    # l = list(s)
-    # for i in range(len(l)):
-    #     b = fill_input_with_delay(l[i])
-    #     print(b)
-
-    # print(return_abspath_from_file(f"../received_data/khkkk"))
-    # delete_file("../resume/Evgen_Bondar_QA_AQA.pdf")
-
-    # today = date.today()
-    # print(datetime.today() - timedelta(days=10))
-    # print(datetime.today().day - (datetime.today() - timedelta(days=5)).day)
-    # print(datetime.today().day)
-
-    print(read_from_txt("../resume/CoverLetter.txt"))

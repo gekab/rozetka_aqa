@@ -2,13 +2,21 @@ from selenium.webdriver.common.by import By
 
 
 class Main:
-    class MainMane:
+    class MainManu:
         pass
 
     class Header:
-        LOGIN_BUTTON = (By.CSS_SELECTOR, "rz-user button.header__button.ng-star-inserted")
-        BASKET_BUTTON = (By.CSS_SELECTOR, "ul.header-actions button.header__button")
+        LOGIN_BUTTON = (By.CSS_SELECTOR, "rz-user button.header__button")
+        BASKET_BUTTON = (By.CSS_SELECTOR, "rz-cart button.header__button")
         CHANGE_LANG = (By.CSS_SELECTOR, "a.lang__link")
+        CATALOG_BUTTON = (By.ID, "fat-menu")
+
+        class FatMenu:
+            MENU_CATEGORIES = (By.CSS_SELECTOR, "div.menu-wrapper.menu-wrapper_state_animated li.menu-categories__item")
+            MENU_CATEGORIES_SVG = (By.CSS_SELECTOR, "div.menu-wrapper.menu-wrapper_state_animated "
+                                                    "li.menu-categories__item svg.menu-categories__link-chevron")
+            MAIN_BRANDS_A = (By.CSS_SELECTOR, "li.menu__main-brand a")
+            MAIN_BRANDS = (By.CSS_SELECTOR, "li.menu__main-brand img")
 
     class Basket:
         EMPTY_BASKET_H4_TEXT = (By.CSS_SELECTOR, "h4.cart-dummy__heading")
