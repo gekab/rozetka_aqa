@@ -24,6 +24,7 @@ def browser(request):
     options = uc.ChromeOptions()
     options.add_argument('--disable-notifications')
     options.add_argument('--user-data-dir=C:\\Users\\Evgeny\\AppData\\Local\\Google\\Chrome\\User Data\\Default')
+    # options.add_argument('--headless')
     # options.add_argument('--no-first-run --no-service-autorun --password-store=basic')
 
     url = request.config.getoption("--url")

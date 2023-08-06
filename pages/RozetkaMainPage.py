@@ -9,7 +9,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from pages import BasePage
+from pages import CatalogPage
+from pages import CategoryPage
+from pages import ProductPage
 from pages.locators import Main
+from pages.locators import Basket
 
 
 class MainPage(BasePage):
@@ -51,8 +55,13 @@ class MainPage(BasePage):
 
     def empty_basket_h4_text(self):
         basket_h4_text = WebDriverWait(self.browser, self.delay).until(
-            EC.presence_of_element_located(Main.Main.Basket.EMPTY_BASKET_H4_TEXT))
+            EC.presence_of_element_located(Basket.Basket.Content.EMPTY_BASKET_H4_TEXT))
         return basket_h4_text.text
+
+    def basket_not_empty(self):
+        cart_list_items = WebDriverWait(self.browser, self.delay).until(
+            EC.presence_of_all_elements_located(Basket.Basket.Content.CART_LIST_ITEMS))
+        return cart_list_items
 
     def change_language(self):
         WebDriverWait(self.browser, self.delay).until(
@@ -82,7 +91,8 @@ class MainPage(BasePage):
                     print(_ex)
                     self.browser.save_screenshot(f"./screenshots/screenshot_error/{alt_img_brand}_{file_name}")
 
-    def directory_must_be_empty(self, path_name):
+    @staticmethod
+    def directory_must_be_empty(path_name):
         actual_result = len(os.listdir(path_name))
         expected_result = 0
         assert actual_result == expected_result, \

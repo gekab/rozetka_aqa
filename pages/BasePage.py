@@ -1,3 +1,5 @@
+import datetime
+
 from common import common
 
 
@@ -11,3 +13,4 @@ class BasePage:
 
     def open(self):
         self.browser.get(self.url)
+

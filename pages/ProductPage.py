@@ -8,5 +8,7 @@ from .locators import Product
 
 
 class ProductPage(BasePage):
-    def aaaa(self):
-        pass
+    def buy_button_click(self):
+        buy_button = WebDriverWait(self.browser, self.delay).until(
+                EC.element_to_be_clickable(Product.Product.BUY_BUTTON))
+        buy_button.click()
